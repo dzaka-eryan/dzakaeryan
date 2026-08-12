@@ -17,9 +17,9 @@ const projects = [
   {
     name: 'Listing Cat',
     description: 'Marketing database for startups and indie hackers.',
-    status: 'active',
+    status: 'discontinued',
     icon: <LogoListingCat />,
-    link: links.projects.listingcat,
+    link: null,
   },
   {
     name: 'Bluesky Meter',
@@ -30,8 +30,11 @@ const projects = [
   },
 ] as const
 
-const statusLabels: Record<'active' | 'sold', { label: string; variant: BadgeVariant }> = {
-  active: { label: 'Active', variant: 'emerald' },
+const statusLabels: Record<
+  (typeof projects)[number]['status'],
+  { label: string; variant: BadgeVariant }
+> = {
+  discontinued: { label: 'Discontinued', variant: 'red' },
   sold: { label: 'Sold', variant: 'orange' },
 } as const
 
@@ -55,14 +58,18 @@ export function HomeProjects() {
                 </div>
 
                 <CardTitle>
-                  <Link
-                    className="after:absolute after:inset-0"
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {project.name}
-                  </Link>
+                  {project.link ? (
+                    <Link
+                      className="after:absolute after:inset-0"
+                      href={project.link}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {project.name}
+                    </Link>
+                  ) : (
+                    project.name
+                  )}
                 </CardTitle>
 
                 <Badge variant={statusLabels[project.status].variant} size="sm">
@@ -75,9 +82,11 @@ export function HomeProjects() {
               <p>{project.description}</p>
             </CardContent>
 
-            <CardIndicator>
-              <Icon icon={LinkSquare02Icon} />
-            </CardIndicator>
+            {project.link && (
+              <CardIndicator>
+                <Icon icon={LinkSquare02Icon} />
+              </CardIndicator>
+            )}
           </Card>
         ))}
       </div>
