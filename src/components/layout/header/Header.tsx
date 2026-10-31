@@ -3,12 +3,14 @@ import { Container } from '@/components/layout/Container'
 import { Logo } from '@/components/logos/Logo'
 import { Button } from '@/components/ui/Button'
 import { HeaderThemeToggle } from './HeaderThemeToggle'
+import { Navigation } from './Navigation'
 
 export function Header(props: React.ComponentProps<'header'>) {
   return (
     <header {...props}>
       <Container className="flex h-18 items-center gap-3 sm:gap-10" variant="fluid">
         <Button
+          aria-label="Home"
           className="-ml-2.5 gap-1 hover:bg-transparent"
           nativeButton={false}
           variant="ghost"
@@ -16,11 +18,13 @@ export function Header(props: React.ComponentProps<'header'>) {
             <Link href="/" aria-label="Home">
               <Logo className="size-5.5 shrink-0 text-primary" />
               <span className="translate-y-px text-lg leading-none font-bold tracking-wider text-foreground">
-                AH
+                DE
               </span>
             </Link>
           }
         />
+
+        <Navigation />
 
         <div className="-mr-2 ml-auto">
           <HeaderThemeToggle />

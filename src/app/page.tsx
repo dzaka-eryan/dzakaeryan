@@ -33,21 +33,15 @@ const profilePageSchema: WithContext<ProfilePage> = {
 
     homeLocation: {
       '@type': 'Place',
-      name: 'Wroclaw, Poland',
+      name: 'Jakarta, Indonesia',
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Wroclaw',
-        addressCountry: 'PL',
+        addressLocality: 'Jakarta',
+        addressCountry: 'ID',
       },
     },
 
-    sameAs: [
-      links.social.x,
-      links.social.threads,
-      links.social.bluesky,
-      links.social.linkedin,
-      links.social.github,
-    ],
+    sameAs: [links.social.threads, links.social.linkedin, links.social.github],
   },
 }
 

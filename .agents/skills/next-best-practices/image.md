@@ -77,7 +77,7 @@ Use `sizes` to tell the browser which size to download:
 
 // Fixed sidebar image
 <Image
-  src="/avatar.png"
+  src="/anime.png"
   alt="Avatar"
   width={200}
   height={200}

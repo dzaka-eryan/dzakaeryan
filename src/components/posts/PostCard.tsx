@@ -14,7 +14,7 @@ export function PostCard({ post }: { post: Post }) {
         </time>
 
         <CardTitle>
-          <Link className="after:absolute after:inset-0" href={`/posts/${post._meta.path}`}>
+          <Link className="after:absolute after:inset-0" href={`/blog/${post._meta.path}`}>
             {post.title}
           </Link>
         </CardTitle>

@@ -63,8 +63,8 @@
 @theme inline {
   /* Fonts */
   --font-*: initial;
-  --font-heading: var(--font-geist-mono);
-  --font-base: var(--font-geist-mono);
+  --font-heading: var(--font-jetbrains-mono);
+  --font-base: var(--font-jetbrains-mono);
 
   /* Colors */
   --color-background: var(--background);

@@ -6,8 +6,8 @@
   "type": "module",
   "homepage": "https://hudovich.com",
   "author": {
-    "name": "Andrei Hudovich",
-    "email": "andrei@hudovich.com"
+    "name": "Dzaka Eryan",
+    "email": "dzakaeryan@gmail.com"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
   "scripts": {
     "prepare": "husky",
     "start": "next start",
-    "dev": "vercel env run -- next dev",
+    "dev": "next dev",
     "build": "next build",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",

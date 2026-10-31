@@ -27,10 +27,10 @@
   "rules": {
     "eslint/max-lines-per-function": "off",
     "eslint/no-inline-comments": "off",
+    "eslint/no-underscore-dangle": "off",
 
     // Non JSX-runtime rules
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-uses-react": "off"
+    "react/react-in-jsx-scope": "off"
   },
 
   "settings": {

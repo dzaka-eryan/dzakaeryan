@@ -1,6 +1,6 @@
 import '@/app/global.css'
 
-import { Geist_Mono } from 'next/font/google'
+import { JetBrains_Mono } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Footer } from '@/components/layout/footer/Footer'
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
   },
 }
 
-const geistMono = Geist_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  variable: '--font-geist-mono',
+  variable: '--font-jetbrains-mono',
 })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className={`${geistMono.variable}`} lang="en" suppressHydrationWarning>
+    <html className={`${jetbrainsMono.variable}`} lang="en" suppressHydrationWarning>
       <body className="h-dvh bg-background font-base text-base text-muted-foreground antialiased">
         <ThemeProvider
           attribute="class"

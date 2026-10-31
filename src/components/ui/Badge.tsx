@@ -18,6 +18,7 @@ export const badgeVariants = cva({
       emerald: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-600',
       orange: 'bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-600',
       red: 'bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-600',
+      green: 'bg-green-100 text-green-800 dark:bg-green-950 dark:text-green-600',
     },
     size: {
       sm: 'h-5 gap-1 px-2 text-xs [&>svg]:size-3.5',

@@ -1,13 +1,33 @@
 export function LogoListingCat(props: React.ComponentProps<'svg'>) {
   return (
     <svg
-      className="fill-foreground"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 16"
+      viewBox="0 0 100 100"
+      width="150"
+      height="150"
       {...props}
     >
-      <path d="M6.597 4.708 2.4 7.505V2.2a.7.7 0 0 1 1.194-.494zm2.798 0 4.196 2.797V2.2a.7.7 0 0 0-1.194-.494z" />
-      <path d="M2.4 4.708v4.196a5.596 5.596 0 0 0 11.191 0V4.708zm3.148 4.896a1.05 1.05 0 1 1 0-2.098 1.05 1.05 0 0 1 0 2.098m5.246 0a1.05 1.05 0 1 1 0-2.099 1.05 1.05 0 0 1 0 2.099" />
+      <defs>
+        <linearGradient id="techOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FF9D00" />
+          <stop offset="100%" stop-color="#FF5E00" />
+        </linearGradient>
+
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#FF5E00" flood-opacity="0.3" />
+        </filter>
+      </defs>
+
+      <g filter="url(#shadow)">
+        <rect x="20" y="15" width="16" height="70" rx="8" fill="url(#techOrange)" />
+
+        <path
+          d="M 28 23 L 45 23 A 27 27 0 0 1 45 77 L 28 77"
+          fill="none"
+          stroke="url(#techOrange)"
+          stroke-width="16"
+        />
+      </g>
     </svg>
   )
 }

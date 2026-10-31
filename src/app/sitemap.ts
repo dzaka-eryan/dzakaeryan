@@ -7,7 +7,7 @@ const today = new Date().toISOString().split('T')[0]
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = allPosts.map((post) => {
     return {
-      url: new URL(`/posts/${post._meta.path}`, env.NEXT_PUBLIC_BASE_URL).toString(),
+      url: new URL(`/blog/${post._meta.path}`, env.NEXT_PUBLIC_BASE_URL).toString(),
       lastModified: post.publishedAt,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
@@ -22,8 +22,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: new URL('/posts', env.NEXT_PUBLIC_BASE_URL).toString(),
+      url: new URL('/about', env.NEXT_PUBLIC_BASE_URL).toString(),
+      lastModified: today,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: new URL('/blog', env.NEXT_PUBLIC_BASE_URL).toString(),
       lastModified: posts[0]?.lastModified ?? today,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: new URL('/kelas', env.NEXT_PUBLIC_BASE_URL).toString(),
+      lastModified: today,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
