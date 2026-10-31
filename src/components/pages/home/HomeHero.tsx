@@ -34,11 +34,11 @@ export function HomeHero(props: React.ComponentProps<'section'>) {
           />
         </p>
 
-        <p>
+        {/* <p>
           Backed by 7+ years in software engineering, I architect resilient, high-throughput
           applications from the ground up. I bridge the gap between complex business needs and
           clean, maintainable code that scales.
-        </p>
+        </p> */}
       </div>
 
       <div className="flex items-center gap-4">
