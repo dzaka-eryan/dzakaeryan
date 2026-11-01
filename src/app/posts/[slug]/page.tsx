@@ -1,7 +1,10 @@
 import { redirect } from 'next/navigation'
+import { allPosts } from 'content-collections'
 
 export function generateStaticParams() {
-  return [{ slug: '__placeholder__' }]
+  return allPosts.map((post) => ({
+    slug: post._meta.path,
+  }))
 }
 
 interface PostPageProps {

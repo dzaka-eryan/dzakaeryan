@@ -19,9 +19,10 @@ const mdxComponents = {
   ),
 }
 
-// TEMP: https://nextjs.org/docs/messages/empty-generate-static-params
 export function generateStaticParams() {
-  return [{ slug: '__placeholder__' }]
+  return allPosts.map((post) => ({
+    slug: post._meta.path,
+  }))
 }
 
 interface BlogPostPageProps {
@@ -34,10 +35,6 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { slug } = await params
   const resolvedParent = await parent
-
-  if (slug === '__placeholder__') {
-    notFound()
-  }
 
   const post = allPosts.find((item) => item._meta.path === slug)
 
