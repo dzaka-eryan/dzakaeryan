@@ -11,6 +11,7 @@ const posts = defineCollection({
     publishedAt: z.iso.date(),
     summary: z.string(),
     content: z.string(),
+    pinned: z.boolean().optional(),
   }),
   transform: async (document, context) => {
     const mdx = await compileMDX(context, document)

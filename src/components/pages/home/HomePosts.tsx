@@ -7,6 +7,12 @@ export function HomePosts(props: React.ComponentProps<'section'>) {
     return null
   }
 
+  const posts = [...allPosts].sort((a, b) => {
+    if (a.pinned && !b.pinned) return -1
+    if (!a.pinned && b.pinned) return 1
+    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  })
+
   return (
     <section {...props}>
       <SectionHeader>
@@ -14,7 +20,7 @@ export function HomePosts(props: React.ComponentProps<'section'>) {
       </SectionHeader>
 
       <div className="space-y-4">
-        {allPosts.map((post) => (
+        {posts.map((post) => (
           <PostCard key={post._meta.path} post={post} />
         ))}
       </div>
